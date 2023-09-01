@@ -23,5 +23,16 @@ services:
     environment:
       MONGO_URI: "mongodb://mongodb:27017"
 
+  react-app:
+    build:
+      context: ../exif-app-frontend
+    container_name: exif-app-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      FLASK_APP_URL: "exif-app-backend:5000"
+    networks:
+      - exif-app-network
+
 networks:
   exif-app-network:
