@@ -31,8 +31,6 @@ services:
       - "3000:3000"
     environment:
       FLASK_APP_URL: "exif-app-backend:5000"
-    networks:
-      - exif-app-network
 
 networks:
   exif-app-network:
